@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bernardo,Fabio,Pasquale,Kevin" />
+    <title>Sito Web di Assistenza Tecnica</title>
+    <link rel="stylesheet" type="text/css" href="2.css">
+    <style>
+        body {
+            background-color: cornflowerblue; /* #9DD0E7 #9db88f Sfondo grigio chiaro */
+        }
+        /*Header*/
+        header {
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .div1 {
+            display: flex;
+            justify-content: space-between; /* Allinea i figli ai margini opposti del contenitore */
+            align-items: center; /* Centra verticalmente gli elementi figli */
+        }
+
+            .div1 h1 {
+                margin: 0; /* Rimuovi il margine predefinito */
+                text-align: center; /* Centra il testo */
+                font-size: 30px;
+            }
+
+            .div1 img {
+                border-radius: 20px; /* Aggiungi bordo arrotondato */
+                float: right; /* Allinea l'immagine a destra */
+                margin-left: 10px; /* Aggiungi un margine a sinistra per separare il testo dall'immagine */
+            }
+
+        nav {
+            float: left;
+            width: 20%;
+            height: 100%;
+            background-color: cornflowerblue;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        header {
+            overflow: hidden;
+        }
+
+
+        /*Stile button*/
+        button {
+            display: inline-block;
+            transition: all 0.2s ease-in;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            color: #090909;
+            padding: 0.7em 1.7em;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 0.5em;
+            background: #e8e8e8;
+            border: 1px solid #e8e8e8;
+            box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+        }
+
+            button:active {
+                color: #666;
+                box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+            }
+
+            button:before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%) scaleY(1) scaleX(1.25);
+                top: 100%;
+                width: 140%;
+                height: 180%;
+                background-color: rgba(0, 0, 0, 0.05);
+                border-radius: 50%;
+                display: block;
+                transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+                z-index: -1;
+            }
+
+            button:after {
+                content: "";
+                position: absolute;
+                left: 55%;
+                transform: translateX(-50%) scaleY(1) scaleX(1.45);
+                top: 180%;
+                width: 160%;
+                height: 190%;
+                background-color: #009087;
+                border-radius: 50%;
+                display: block;
+                transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+                z-index: -1;
+            }
+
+            button:hover {
+                color: #ffffff;
+                border: 1px solid #009087;
+            }
+
+                button:hover:before {
+                    top: -35%;
+                    background-color: #009087;
+                    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+                }
+
+                button:hover:after {
+                    top: -45%;
+                    background-color: #009087;
+                    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+                }
+
+        .submit-button {
+            width: 100%; /* Imposta la larghezza al 100% */
+            /* Aggiungi altri stili desiderati */
+        }
+
+        .contactButton {
+            float: right;
+            left: auto;
+            right: 0;
+        }
+
+        
+        /*Berna*/
+
+
+        footer * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: white;
+        }
+
+        footer {
+            margin: 0;
+            background: #343434;
+            padding-top: 50px;
+            margin-top: 10%;
+            width: 100%;
+            position: absolute;
+            margin-left: -8px; /* Rimuove il margine a sinistra */
+            margin-right: 0; /* Rimuove il margine a destra */
+        }
+
+        .container {
+            width: auto;
+            max-width: 1140px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .footer-content {
+            width: 30%; /* Modifica la larghezza dei contenitori in modo che si adattino meglio */
+            margin-bottom: 20px; /* Aggiunge uno spazio inferiore per separare i contenuti */
+            text-align: center; /* Centra il testo all'interno dei contenitori */
+        }
+
+        h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .footer-content p {
+            width: 190px;
+            margin: auto;
+            padding: 7px;
+        }
+
+        .footer-content ul {
+            text-align: center;
+        }
+
+        .list {
+            padding: 0;
+        }
+
+            .list li {
+                width: auto;
+                text-align: center;
+                list-style-type: none;
+                padding: 7px;
+                position: relative;
+            }
+
+                .list li::before {
+                    content: '';
+                    position: absolute;
+                    transform: translate(-50%,-50%);
+                    left: 50%;
+                    top: 100%;
+                    width: 0;
+                    height: 2px;
+                    background: cornflowerblue;
+                    transition-duration: .5s;
+                }
+
+                .list li:hover::before {
+                    width: 70px;
+                }
+
+        .social-icons {
+            text-align: center;
+            padding: 0;
+        }
+
+            .social-icons li {
+                display: inline-block;
+                text-align: center;
+                padding: 5px;
+            }
+
+            .social-icons i {
+                color: white;
+                font-size: 25px;
+            }
+
+        a {
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: cornflowerblue;
+            }
+
+        .ben .social-icons i:hover {
+            color: cornflowerblue;
+        }
+
+        .bottom-bar {
+            width: auto;
+            background: cornflowerblue;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+            right: -5px;
+        }
+
+            .bottom-bar p {
+                color: #343434;
+                margin: 0;
+                font-size: 16px;
+                padding: 7px;
+            }
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <br />
+                <li><a href="accessoUtente2.html"><img src="accesso.png" width="20%"</img></a></li>
+                <br />
+                <li><a href="#footer">Contatta Assistenza Tecnica</a></li>
+            </ul>
+        </nav>
+
+        <div class="div1">
+            <h1 data-lang="pageTitle-it">Bit Repair Assistenza Tecnica</h1>
+            <img src="BitRepair.jpeg" width="120px" alt="">
+        </div>
+
+    </header>
+
+    <h1 data-lang="lingua-it">Seleziona lingua:</h1>
+    <!-- Pulsanti per selezionare la lingua -->
+    <button onclick="cambiaLingua('it')">IT</button>
+    <button onclick="cambiaLingua('en')">EN</button>
+    <button onclick="richiestaAssistenza()" data-lang="button" class="contactButton">Richiesta Assistenza</button><br /><br />
+    <button onclick="richiesteAssistenza()" data-lang="button2" class="contactButton">Richieste Tecnico</button>
+
+    <script>
+        function richiestaAssistenza() {
+            // Reindirizza l'utente alla pagina per prenotare un appuntamento
+            window.location.href = "Gestione_Delle_Riparazioni.html"; // Sostituisci "prenotaAppuntamento.html" con l'URL della tua pagina di prenotazione appuntamenti
+        }
+    </script>
+    <script>
+        function richiesteAssistenza() {
+            // Chiede all'utente di inserire un PIN
+            var pin = prompt("Inserisci il PIN:");
+
+            // Verifica se il PIN è corretto
+            if (pin === "1234") { // Sostituisci "1234" con il tuo PIN corretto
+                // Reindirizza l'utente alla pagina per prenotare un appuntamento
+                window.location.href = "richieste_tecnico.html"; // Sostituisci "richieste_tecnico.html" con l'URL della tua pagina di richiesta assistenza
+            } else {
+                alert("PIN non valido. Riprova."); // Mostra un messaggio di errore se il PIN non è corretto
+            }
+        }
+    </script>
+
+    <section id="hero">
+        <h2 data-lang="asstecn">Assistenza Tecnica Professionale</h2>
+        <p data-lang="probl">Risolviamo i problemi tecnici dei tuoi dispositivi</p>
+    </section>
+
+
+    <section id="services">
+        <h2 data-lang="servizi">I nostri servizi</h2>
+        <div class="service">
+            <img src="attrezzi.jpg" alt="Servizio 1">
+            <h3 data-lang="ripeman">Riparazione e Manutenzione</h3>
+            <p data-lang="p1">Offriamo servizi di riparazione e manutenzione per una vasta gamma di dispositivi tecnologici, inclusi computer, smartphone e elettrodomestici.</p>
+        </div>
+
+        <div class="service">
+            <img src="tele.jpg" alt="Servizio 2">
+            <h3 data-lang="ass">Assistenza Remota</h3>
+            <p data-lang="p2">Utilizziamo strumenti di assistenza remota per risolvere i problemi tecnici dei tuoi dispositivi senza che tu debba spostarti da casa.</p>
+        </div>
+
+        <!-- Altri servizi -->
+    </section>
+
+    <section id="products">
+        <h2 data-lang="pro">Prodotti Disponibili</h2>
+        <div class="product">
+            <img src="pc.jpg" alt="Prodotto 1">
+            <h3 data-lang="pc">Computer Portatile Modello X1</h3>
+            <p data-lang="p3">Processore Intel Core i7, 16 GB di RAM, SSD da 512 GB</p>
+        </div>
+
+        <div class="product">
+            <img src="samsung.jpg" alt="Prodotto 2">
+            <h3 data-lang="sma">Smartphone Samsung Galaxy Z3m </h3>
+            <p data-lang="p4">Schermo OLED da 6,2 pollici, Fotocamera da 48 MP, Batteria da 4000 mAh</p>
+        </div>
+
+        <!-- Altri prodotti -->
+    </section>
+
+
+    <footer id="footer">
+        <div class="ben">
+            <div class="container">
+                <div class="footer-content" id="contatti">
+                    <h3 data-lang="foot1">Contattateci</h3>
+                    <p>Email:Info@riparazionetutto.com</p>
+                    <p data-lang="foot2">Telefono: 0952236779</p>
+                    <p data-lang="foot3">Via:Crispi:95122:Roma</p>
+                </div>
+
+                <div class="footer-content">
+                    <h3 data-lang="foot4">Seguiteci</h3>
+                    <ul class="list">
+                        <img src="face2.jpg">
+                        <li><a href="">Facebook</a></li>
+                        <img src="instagram.jpg">
+                        <li><a href="">Instagram</a></li>
+                        <img src="bo.jpg">
+                        <li><a href="">Twitter</a></li>
+                        <img src="new.jpg">
+                        <li><a href="">Linkedin</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <p>©copyright,2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        // Definisci un array per le traduzioni in italiano
+        var translationsIt = {
+            'pageTitle-it': 'Bit Repair Assistenza Tecnica',
+            'lingua-it': 'Seleziona lingua: ',
+            'button': 'Richiesta Assistenza',
+            'button2': 'Richieste Tecnico', 
+            'servizi': 'I nostri servizi',
+            'ripeman': 'I nostri servizi',
+            'p1': 'Offriamo servizi di riparazione e manutenzione per una vasta gamma di dispositivi tecnologici, inclusi computer, smartphone e elettrodomestici.',
+            'ass': 'Assistenza Remota',
+            'p2': 'Utilizziamo strumenti di assistenza remota per risolvere i problemi tecnici dei tuoi dispositivi senza che tu debba spostarti da casa.',
+            'pro': 'Prodotti Disponibili',
+            'pc': 'Computer Portatile Modello X1',
+            'p3': 'Processore Intel Core i7, 16 GB di RAM, SSD da 512 GB',
+            'sma': 'Smart phone Samsung Galaxy Z3m',
+            'p4': 'Schermo OLED da 6,2 pollici, Fotocamera da 48 MP, Batteria da 4000 mAh',
+            'asstecn': 'Assistenza Tecnica Professionale',
+            'probl': 'Risolviamo i problemi tecnici dei tuoi dispositivi',
+            //footer
+            'foot1': 'Contattateci',
+            'foot2': 'Telefono: 0952236779',
+            'foot3': 'Via: Crispi, 95122, Roma',
+            'foot4': 'Seguiteci'
+        };
+
+        // Definisci un array per le traduzioni in inglese
+        var translationsEn = {
+            'pageTitle-it': 'Bit Repair Technical Assistance',
+            'lingua-it': 'Select Language:',
+            'button': 'Request Assistance',
+            'button2': 'Technical Requests',
+            'servizi': 'Our services',
+            'ripeman': 'Repair and Maintenance',
+            'p1': 'We offer repair and maintenance services for a wide range of technology devices, including computers, smartphones and appliances.',
+            'ass': 'Remote Support',
+            'p2': 'We use remote assistance tools to resolve technical problems with your devices without you having to leave your home.',
+            'pro': 'Products Available',
+            'pc': 'Laptop Computer Model X1',
+            'p3': 'Intel Core i7 processor, 16 GB RAM, 512 GB SSD',
+            'sma': 'Smart phone Samsung Galaxy Z3m',
+            'p4': '6.2 inch OLED screen, 48 MP camera, 4000 mAh battery',
+            'asstecn': 'Professional Technical Assistance',
+            'probl': 'We solve the technical problems of your devices',
+            //footer
+            'foot1': 'Contact us',
+            'foot2': 'Telephone: 0952236779',
+            'foot3': 'Street: Crispi, 95122, Roma',
+            'foot4': 'Follow us'
+        };
+
+        // Funzione per cambiare la lingua
+        function cambiaLingua(lang) {
+            var translations = lang === 'it' ? translationsIt : translationsEn;
+
+            // Imposta il testo degli elementi con attributo "data-lang"
+            var elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(function (element) {
+                var key = element.getAttribute('data-lang');
+                if (translations[key]) {
+                    element.innerText = translations[key];
+                }
+            });
+
+            // Imposta i placeholder per gli input
+            var placeholders = document.querySelectorAll('input[placeholder]');
+            placeholders.forEach(function (input) {
+                var key = 'placeholder-' + input.id;
+                if (translations[key]) {
+                    input.placeholder = translations[key];
+                }
+            });
+
+            // Aggiorna il titolo della pagina
+            document.title = translations['pageTitle-it'] || 'Bit Repair Assistenza Tecnica';
+        }
+        window.onload = function () {
+            cambiaLingua('it');
+        }
+    </script>
+    <script>
+        function passaTesto() {
+            // Testo da passare
+            const testoDaPassare = "Questo è il testo da passare.";
+            // Codifica il testo per l'URL
+            const testoCodificato = encodeURIComponent(testoDaPassare);
+            // Crea l'URL con il parametro "testo" e passa il testo codificato
+            const urlDestinazione = "index2.html?testo=" + testoCodificato;
+            console.log("URL di destinazione:", urlDestinazione);
+            // Reindirizza alla pagina di destinazione
+            window.location.href = urlDestinazione;
+        }
+    </script>
+</body>
+</html >

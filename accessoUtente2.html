@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Accesso Utente</title>
+
+    <style>
+        body {
+            background-color: cornflowerblue; /* #9DD0E7 #9db88f Sfondo grigio chiaro */
+        }
+  .form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  margin: auto; 
+  margin-top: 8%;
+  align-items: center; 
+}
+
+
+
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #00bfff;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: #00bfff;
+}
+
+.message, 
+.signin {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.signin a {
+  color: #00bfff;
+}
+
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  color: #00bfff;
+  top: -25%;
+  font-size: 0.7em;
+  font-weight: 600;
+  
+}
+
+.input {
+  font-size: medium;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+  margin-top: 10%;
+  margin-left: 80%;
+  background-color: #00bfff;
+}
+
+.submit:hover {
+  background-color: #00bfff96;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.box {
+  width: 140px;
+  height: auto;
+  float: left;
+  transition: .5s linear;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 15px;
+  text-align: center;
+  margin: 0 5px;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.box:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(100%);
+}
+
+.box:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  transform: translateX(-100%);
+}
+
+.box:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.box:hover:before {
+  border-color: #27bbff;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .3s;
+}
+
+.box:hover:after {
+  border-color:#27bbff;
+  height: 100%;
+  transform: translateX(0);
+  transition: .3s transform linear, .3s height linear .5s;
+}
+
+button {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /*Header*/
+
+        header {
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .div1 {
+            display: flex;
+            justify-content: space-between; /* Allinea i figli ai margini opposti del contenitore */
+            align-items: center; /* Centra verticalmente gli elementi figli */
+        }
+
+            .div1 h1 {
+                margin: 0; /* Rimuovi il margine predefinito */
+                text-align: center; /* Centra il testo */
+                font-size: 30px;
+            }
+
+            .div1 img {
+                border-radius: 20px; /* Aggiungi bordo arrotondato */
+                float: right; /* Allinea l'immagine a destra */
+                margin-left: 10px; /* Aggiungi un margine a sinistra per separare il testo dall'immagine */
+            }
+
+        nav {
+            float: left;
+            width: 20%;
+            height: 100%;
+            background-color: cornflowerblue;
+            padding: 10px;
+        }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            nav li {
+                margin-bottom: 10px;
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            nav ul li a {
+                color: #333;
+                text-decoration: none;
+                padding: 5px;
+            }   
+
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <br />
+                <li><a href="accessoUtente2.html"><img src="accesso.png" width="20%"</img></a></li>
+                <br />
+                <li><a href="#footer">Contatta Assistenza Tecnica</a></li>
+            </ul>
+        </nav>
+
+        <div class="div1">
+            <h1 data-lang="pageTitle-it">Bit Repair Assistenza Tecnica</h1>
+            <img src="BitRepair.jpeg" width="120px" alt="">
+        </div>
+
+    </header>
+
+    <div>
+        <form class="form">
+
+
+            <a href="#" onclick="cambiaLingua('it')">
+                IT
+            </a>
+
+            <a href="#" onclick="cambiaLingua('en')">
+                EN
+            </a>
+
+
+
+            <button>
+                <a class="box" href="accessoUtente2.html" data-lang="utente">
+                    Utente
+                </a>
+            </button>
+            <button>
+                <a class="box" href="accessoTecnico.html" data-lang="tecnico">
+                    Tecnico
+                </a>
+            </button>
+
+            <p class="title" data-lang="benvenuto">Benvenuto!</p>
+            <p class="message" data-lang="paragrago">Accedi per inserire le tue richieste</p>
+            <div class="flex">
+
+                <label>
+                    <input class="input" type="text" id="username" data-lang="email" required>
+                    <span>Email</span>
+                </label>
+                <br>
+                <br>
+                <label>
+                    <input class="input" type="password" id="password" data-lang="password" required>
+                    <span>Password</span>
+                </label>
+
+                <button class="submit" onclick="login()" data-lang="accedi">Accedi</button>
+                <a href="registrati.html">
+                    <p class="signin" style="margin-top: 10%;" data-lang="registrati">Non hai un account ? Registati</p>
+                </a>
+        </form>
+    </div>
+
+
+    <footer id="footer">
+        <div id="benny">
+            <div class="container">
+                <div class="footer-content" id="contatti">
+                    <h3 data-lang="foot1">Contattateci</h3>
+                    <p>Email:Info@riparazionetutto.com</p>
+                    <p data-lang="foot2">Telefono: 0952236779</p>
+                    <p data-lang="foot3">Via:Crispi:95122:Roma</p>
+                </div>
+
+                <div class="footer-content">
+                    <h3 data-lang="foot4">Seguiteci</h3>
+                    <ul class="list">
+                        <img src="face2.jpg">
+                        <li><a href="">Facebook</a></li>
+                        <img src="instagram.jpg">
+                        <li><a href="">Instagram</a></li>
+                        <img src="bo.jpg">
+                        <li><a href="">Twitter</a></li>
+                        <img src="new.jpg">
+                        <li><a href="">Linkedin</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <p>©copyright,2024</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
